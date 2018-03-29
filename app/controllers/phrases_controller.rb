@@ -15,7 +15,7 @@ class PhrasesController < ApplicationController
   def get_phrase
     random_phrase = Phrase.order("RANDOM()")
     if params[:existing_phrase].present?
-      @phrase = random_phrase.where.not(id: JSON.parse(params[:existing_phrase])).first
+      @phrase = random_phrase.where.not(id: params[:existing_phrase]).first
     else
       @phrase = random_phrase.first
     end
