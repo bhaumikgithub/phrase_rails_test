@@ -35,6 +35,8 @@ function getNewPhrase(p_val){
   else{
     if(p_val){
       $("#phrase-box").append(generateDiv(p_val));
+      totalCount--;
+      displayTotalCount();
     }
 
     else{
@@ -48,12 +50,13 @@ function getNewPhrase(p_val){
             $("#phrase-box").append(generateDiv(response.phrase ) );
             storeNumberInCookies(Number(response.id));
             storePhraseInCookies(String(response.phrase));
+            totalCount--;
+            displayTotalCount();
           }
         }
       });
     }
-    totalCount--;
-    displayTotalCount();
+    
   }
 }
 
