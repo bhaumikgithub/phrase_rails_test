@@ -1,5 +1,5 @@
 class PhrasesController < ApplicationController
-  before_action :get_phrase
+  before_action :get_phrase, only: [:random_phrase]
 
   # GET /random_phrase
   def random_phrase
